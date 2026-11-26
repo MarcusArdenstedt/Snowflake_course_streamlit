@@ -30,7 +30,7 @@ pd_df = my_dataframe.to_pandas()
 # st.stop()
 
 # name box
-name_on_order = st.text_input('Name of Smoothie:', key="product_name").upper()
+name_on_order = st.text_input('Name of Smoothie:', key="product_name")
 st.write(f"The name of Smoothie will be:\n{name_on_order}")   
 
 ingredients_list = st.multiselect(
