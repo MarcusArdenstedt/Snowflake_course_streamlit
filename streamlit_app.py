@@ -20,8 +20,9 @@ if st.session_state.get("clear_form"):
 # For using functions - select specific column from the table
 cnx = st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("smoothies.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
-# st.dataframe(data=my_dataframe, use_container_width=True)
+my_dataframe = session.table("smoothies.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'), col('SEARCH_ON'))
+st.dataframe(data=my_dataframe, use_container_width=True)
+st.stop()
 
 # name box
 name_on_order = st.text_input('Name of Smoothie:', key="product_name").upper()
