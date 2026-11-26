@@ -72,6 +72,6 @@ if st.session_state.get("order_submitted"):
 import requests
 smoothiefroot_response = requests.get(url= "https://my.smoothiefroot.com/api/fruit/watermelon")
 #st.text(smoothiefroot_response.json())
-sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width)
+sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 
