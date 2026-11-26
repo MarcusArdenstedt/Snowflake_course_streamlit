@@ -51,7 +51,7 @@ if ingredients_list:
         # looping threw ingredients list and adding in a string
         ingredients_string = ''
         for fruit_chosen in ingredients_list:
-            ingredients_string += fruit_chosen + ', '
+            ingredients_string += fruit_chosen + ' '
 
             search_on = pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
             # st.write(f'The search value for {fruit_chosen} is {search_on}')
@@ -61,11 +61,11 @@ if ingredients_list:
             sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
     
     
-        ingredients_finish = ingredients_string[:-2]
+        # ingredients_finish = ingredients_string[:-2]
         
     
         my_insert_stmt = """insert into smoothies.public.orders(ingredients, name_on_order)
-                    values ('"""+ ingredients_finish +"""', '"""+ name_on_order +"""')"""
+                    values ('"""+ ingredients_string +"""', '"""+ name_on_order +"""')"""
     
         #check how the insert looks like before adding it
         # st.write(my_insert_stmt)
