@@ -71,4 +71,4 @@ if st.session_state.get("order_submitted"):
 
 import requests
 smoothiefroot_response = requests.get(url= "https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+st.text(smoothiefroot_response.json())
